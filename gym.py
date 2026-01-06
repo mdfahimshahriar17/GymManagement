@@ -33,15 +33,6 @@ class Calculate_BMI:
 
 
 
-class GYM:
-    def __init__(self, name, address):
-        self.name = name
-        self.address = address
-        self.member_informations = []
-
-    def add_member(self, ):
-
-
 
 
 
