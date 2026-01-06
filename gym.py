@@ -1,71 +1,78 @@
-class Person:
-    def __init__(self, name, age, phone, height, weight, BMI = None):
-        self.name = name
-        self.age = age
-        self.phone = phone
-        self.height = height
-        self.weight = weight
-        self.BMI = BMI
-
-    def __str__(self):
-        return f"Name : {self.name}\nAge : {self.age}\nHeight : {self.height}\nWeight: {self.weight}\nBMI : {self.BMI}"
+import json
+from person import Person
 
 class BMI_Calculate:
 
     def calculate_bmi(self, height, weight):
         
-        BMI = (weight/(height**2))
-        bmi_range = ""
+        BMI_value = (weight/(height**2))
+        BMI_range = ""
         
-        if BMI < 18.5:
-            bmi_range = "Underweight"
+        if BMI_value < 18.5:
+            BMI_range = "Underweight"
         
-        elif BMI < 25:
-            bmi_range = "Normal Weight"
+        elif BMI_value < 25:
+            BMI_range = "Normal Weight"
         
-        elif BMI < 30:
-            bmi_range = "Overweight"
+        elif BMI_value < 30:
+            BMI_range = "Overweight"
 
         else:
-            bmi_range = "Obese"
+            BMI_range = "Obese"
 
-        return (BMI, bmi_range)
+        return BMI_value, BMI_range
 
 
 
 class GYM:
-    def __init__(self, name, address):
+    def __init__(self, name, address, file_name="member_data.json"):
         self.name = name
         self.address = address
+        self.file_name = file_name
         self.member_informations = []
+        self.load_members()
 
 
+    def load_members(self):
+        try:
+            with open(self.file_name, "r") as f:
+                data = json.load(f)
+                self.member_informations = [Person.from_dict(d) for d in data]
+
+            calc = BMI_Calculate()
+            updated = False
+            for p in self.member_informations:
+                if p.BMI_value is None or p.BMI_range is None:
+                    p.BMI_value, p.BMI_range = calc.calculate_bmi(p.height, p.weight)
+                    updated = True
+
+            if updated:
+                self.save_members()
+
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.member_informations = []
 
 
+    def save_members(self):
+        data = [person.to_dict() for person in self.member_informations]
+        with open(self.file_name, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+    
     def add_member(self, name, age, phone, height, weight):
-        bmi = BMI_Calculate().calculate_bmi(height=height, weight=weight)
+        BMI_value, BMI_range = BMI_Calculate().calculate_bmi(height, weight)
 
-        person = Person(name=name, age=age, phone=phone, height=height, weight=weight, BMI=bmi)
-        
+        person = Person(
+            name=name,
+            age=age,
+            phone=phone,
+            height=height,
+            weight=weight,
+            BMI_value=BMI_value,
+            BMI_range=BMI_range,
+        )
+
         self.member_informations.append(person)
-
-
-gym = GYM("Gymnasium", "Hussaini Dalan")
-
-gym.add_member("Fahim", 26, "012345821", 1.68, 85.5)
-gym.add_member("Nahar", 26, "012615821", 1.23, 56)
-
-print([str(member) for member in gym.member_informations])
-
-
-
-
-
-
-
-
-
-
-
-
-# print("*********CALCULATE YOUR BMI (Body Mass Index)*********")
+        self.save_members()
+        

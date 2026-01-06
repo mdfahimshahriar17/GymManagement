@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ML",
+    "age": 45,
+    "phone": "2546456",
+    "height": 1.65,
+    "weight": 56.0,
+    "BMI_value": 20.569329660238754,
+    "BMI_range": "Normal Weight"
+  },
+  {
+    "name": "Trump",
+    "age": 65,
+    "phone": "5346466546",
+    "height": 1.78,
+    "weight": 85.0,
+    "BMI_value": 26.82742078020452,
+    "BMI_range": "Overweight"
+  },
+  {
+    "name": "Obama",
+    "age": 85,
+    "phone": "6666684887",
+    "height": 1.75,
+    "weight": 58.0,
+    "BMI_value": 18.93877551020408,
+    "BMI_range": "Normal Weight"
+  },
+  {
+    "name": "ML",
+    "age": 25,
+    "phone": "68544151",
+    "height": 1.67,
+    "weight": 70.0,
+    "BMI_value": 25.099501595611173,
+    "BMI_range": "Overweight"
+  },
+  {
+    "name": "Trump",
+    "age": 85,
+    "phone": "054654651",
+    "height": 1.75,
+    "weight": 85.0,
+    "BMI_value": 27.755102040816325,
+    "BMI_range": "Overweight"
+  },
+  {
+    "name": "Trudo",
+    "age": 55,
+    "phone": "65464",
+    "height": 1.85,
+    "weight": 70.0,
+    "BMI_value": 20.45288531775018,
+    "BMI_range": "Normal Weight"
+  }
+]
