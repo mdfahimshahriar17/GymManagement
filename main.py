@@ -4,6 +4,7 @@ def functionalities_choice():
     print("*********THE GYMNASIUM*********")
     print("TYPE (1) TO ADD MEMBER")
     print("TYPE (2) TO SEE MEMBERS")
+    print("TYPE (3) TO Add MEMBERSHIP")
     print("TYPE (0) TO CLOSE")
 
     
@@ -47,7 +48,13 @@ def main():
             
             else:
                 print("MEMBER LIST IS EMPTY!")
-            
+        
+        
+        elif choice == 3:
+            phone = int(input("Enter Phone Number : "))
+            # find_member = gym.member_informations.
+
+
 
         elif choice == 0:
             print("Closed")
