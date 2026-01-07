@@ -33,15 +33,3 @@ class Person:
             "BMI_value": self.BMI_value,
             "BMI_range": self.BMI_range,
         }
-
-    @classmethod
-    def from_dict(cls, data):
-        return cls(
-            name=data["name"],
-            age=data["age"],
-            phone=data["phone"],
-            height=data["height"],
-            weight=data["weight"],
-            BMI_value=data.get("BMI_value"),
-            BMI_range=data.get("BMI_range"),
-        )
