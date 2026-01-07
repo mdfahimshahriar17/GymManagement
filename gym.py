@@ -37,17 +37,7 @@ class GYM:
         try:
             with open(self.file_name, "r") as f:
                 data = json.load(f)
-                self.member_informations = [Person.from_dict(d) for d in data]
-
-            calc = BMI_Calculate()
-            updated = False
-            for p in self.member_informations:
-                if p.BMI_value is None or p.BMI_range is None:
-                    p.BMI_value, p.BMI_range = calc.calculate_bmi(p.height, p.weight)
-                    updated = True
-
-            if updated:
-                self.save_members()
+                self.member_informations = [Person(**member_data) for member_data in data]
 
         except (FileNotFoundError, json.JSONDecodeError):
             self.member_informations = []
