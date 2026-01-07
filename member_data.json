@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Trump",
+    "age": 65,
+    "phone": "570752",
+    "height": 1.75,
+    "weight": 60.0,
+    "BMI_value": 19.591836734693878,
+    "BMI_range": "Normal Weight"
+  }
+]

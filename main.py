@@ -24,14 +24,18 @@ def main():
         
 
         if choice == 1:
-            name = input("Enter Name : ")
-            age = int(input("Enter Age : "))
-            phone = input("Enter Phone : ")
-            height = float(input("Enter Height in Meter : "))
-            weight = float(input("Enter Weight : "))
+            try:
+                name = input("Enter Name : ")
+                age = int(input("Enter Age : "))
+                phone = input("Enter Phone : ")
+                height = float(input("Enter Height in Meter : "))
+                weight = float(input("Enter Weight : "))
             
-            gym.add_member(name=name, age=age, phone=phone, height=height, weight=weight)
-            print("Member added!")
+                gym.add_member(name=name, age=age, phone=phone, height=height, weight=weight)
+                print("Member added!")
+
+            except ValueError:
+                print("Something you have written!")
             
         
         elif choice == 2:
