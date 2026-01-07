@@ -8,6 +8,18 @@ class Person:
         self.BMI_value = BMI_value
         self.BMI_range = BMI_range
 
+    def __str__(self):
+     
+        bmi_text = f"{self.BMI_value:.2f} ({self.BMI_range})"
+
+        return (
+            f"Name : {self.name}\n"
+            f"Age : {self.age}\n"
+            f"Phone : {self.phone}\n"
+            f"Height : {self.height}\n"
+            f"Weight : {self.weight}\n"
+            f"BMI : {bmi_text}"
+        )
 
 
     def to_dict(self):
@@ -20,3 +32,4 @@ class Person:
             "BMI_value": self.BMI_value,
             "BMI_range": self.BMI_range,
         }
+ 
