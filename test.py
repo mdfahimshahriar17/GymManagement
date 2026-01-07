@@ -3,9 +3,13 @@ for idx in range(0, len(member)):
     if member[idx].get("phone") == "0176":
         print(f"Name : {member[idx].get("name")} Phone: {member[idx].get("phone")}")
     print(member[idx].get("phone"))
+    print(member)
     # print(member[idx].keys())
 
 for data in member:
     print(data.values())
 
+for data in member:
+    if data.phone == "0176":
+        print("Got it")
 #key methods return dict all keys

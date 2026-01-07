@@ -43,7 +43,7 @@ def main():
             
             if gym.member_informations:
                 for member in gym.member_informations:
-                    print(str(member))
+                    print(member)
                     print("-" * 30)
             
             else:
@@ -52,7 +52,15 @@ def main():
         
         elif choice == 3:
             phone = int(input("Enter Phone Number : "))
-            # find_member = gym.member_informations.
+            if gym.member_informations:
+                for member in gym.member_informations:
+                    if member.phone == "570752":
+                        print("Got it")
+                    
+            
+            else:
+                print("MEMBER LIST IS EMPTY!")
+            # find_member =
 
 
 
