@@ -29,7 +29,6 @@ class GYM:
         with open(self.file_name, "w") as f:
             json.dump(member_data, f, indent=2)
 
-
     
     def add_member(self, name, age, phone, height, weight):
         BMI_value, BMI_range = BMI_Calculate().calculate_bmi(height, weight)
@@ -48,32 +47,26 @@ class GYM:
         self.save_members()
 
 
-    def membership(self,  member, membership_type,):
+    def membership(self, member, membership_type):
         if membership_type == 1:
             membership, access = Membership().bronze()
-            for data in self.member_informations:
-                if data == member:
-                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
-                    self.member_informations.append(member)
-
 
         elif membership_type == 2:
             membership, access = Membership().silvar()
-            for data in self.member_informations:
-                if data == member:
-                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
-                    self.member_informations.append(member)
-
 
         elif membership_type == 3:
             membership, access = Membership().golden()
-            for data in self.member_informations:
-                if data == member:
-                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
-                    self.member_informations.append(member)
 
-                    
         else:
-            return None
-            
+            print("Invalid membership type")
+            return
+
+    
+        member.membership = membership
+        member.access = access
+
+        
+        self.save_members()
+
+        print(f"{member.name} successfully added to {membership} membership")
         
