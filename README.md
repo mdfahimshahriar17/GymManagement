@@ -1,24 +1,19 @@
-GYM MANAGEMENT SYSTEM
+# Gym Management System
 
-A simple Python console application to manage gym members.
-Uses OOP and JSON for data storage.
+A simple Python console-based application to manage gym members using Object-Oriented Programming and JSON storage.
 
-Features:
+## Features
 
-- Add members
-- Calculate BMI automatically
-- Save and load data using JSON
+- Add gym members
+- Automatically calculate BMI
 - View all members
+- Add membership plans (Bronze, Silver, Golden)
+- Save and load data using JSON
 
-Files:
+## How to Run
 
-- person.py (Person class)
-- gym.py (BMI calculation and data handling)
-- main.py (Menu-driven program)
-- member_data.json
+Run the program from the project folder:
 
-Run:
+```bash
 python main.py
-
-BMI Formula:
-BMI = weight / (height \* height)
+```
