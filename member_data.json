@@ -3,18 +3,33 @@
     "name": "Trump",
     "age": 65,
     "phone": "018",
-    "height": 1.75,
-    "weight": 60.0,
-    "BMI_value": 19.591836734693878,
-    "BMI_range": "Normal Weight"
+    "height": 1.63,
+    "weight": 85.0,
+    "BMI_value": 31.992171327486922,
+    "BMI_range": "Obese",
+    "membership": null,
+    "access": null
   },
   {
     "name": "Obama",
-    "age": 56,
+    "age": 85,
     "phone": "017",
-    "height": 1.8,
+    "height": 1.73,
+    "weight": 90.0,
+    "BMI_value": 30.071168431955627,
+    "BMI_range": "Obese",
+    "membership": null,
+    "access": null
+  },
+  {
+    "name": "Trudo",
+    "age": 45,
+    "phone": "016",
+    "height": 1.78,
     "weight": 70.0,
-    "BMI_value": 21.604938271604937,
-    "BMI_range": "Normal Weight"
+    "BMI_value": 22.093170054286073,
+    "BMI_range": "Normal Weight",
+    "membership": null,
+    "access": null
   }
 ]

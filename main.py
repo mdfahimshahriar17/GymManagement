@@ -51,19 +51,25 @@ def main():
         
         
         elif choice == 3:
-            phone = input("Enter Phone Number : ")
+            try:
+                phone = input("Enter Phone Number : ")
 
-            if gym.member_informations:
-                for member in gym.member_informations:
+                if gym.member_informations:
+                    for member in gym.member_informations:
 
-                    if member.phone == phone:
-                        membership_type = int(input("TYPE '1' FOR BRONZE '2' FOR SILVER '3' FOR GOLDEN : "))
-                        
-                        gym.membership(member, membership_type)
+                        if member.phone == phone:
+                            membership_type = int(input("TYPE '1' FOR BRONZE '2' FOR SILVER '3' FOR GOLDEN : "))
+                            
+                            gym.membership(member, membership_type)
+                            print("Membership added!")
+                
+                else:
+                    print("MEMBER LIST IS EMPTY!")
             
-            else:
-                print("MEMBER LIST IS EMPTY!")
-            # find_member =
+            except ValueError:
+                print("Something you have written!")
+            
+            
 
 
 

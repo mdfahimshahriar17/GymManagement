@@ -9,7 +9,7 @@ class Membership:
         membership_type = "Silver"
         return membership_type, access 
     
-    def golden(self, person):    
+    def golden(self):    
         access = 12
         membership_type = "Golden"
         return membership_type, access 
