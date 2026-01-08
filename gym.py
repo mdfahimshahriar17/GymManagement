@@ -54,6 +54,26 @@ class GYM:
             for data in self.member_informations:
                 if data == member:
                     member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
-                    print(member)
+                    self.member_informations.append(member)
+
+
+        elif membership_type == 2:
+            membership, access = Membership().silvar()
+            for data in self.member_informations:
+                if data == member:
+                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
+                    self.member_informations.append(member)
+
+
+        elif membership_type == 3:
+            membership, access = Membership().golden()
+            for data in self.member_informations:
+                if data == member:
+                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
+                    self.member_informations.append(member)
+
+                    
+        else:
+            return None
             
         
