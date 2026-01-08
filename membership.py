@@ -1,12 +1,15 @@
 class Membership:
     def bronze(self):
         access = 3
-        return access
+        membership_type = "Bronze"
+        return membership_type, access 
 
     def silvar(self):
         access = 6
-        return access
+        membership_type = "Silver"
+        return membership_type, access 
     
     def golden(self, person):    
         access = 12
-        return access
+        membership_type = "Golden"
+        return membership_type, access 

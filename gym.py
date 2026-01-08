@@ -1,6 +1,7 @@
 import json
 from person import Person
 from bmi_calculator import BMI_Calculate
+from membership import Membership
 
 
 
@@ -45,4 +46,14 @@ class GYM:
 
         self.member_informations.append(person)
         self.save_members()
+
+
+    def membership(self,  member, membership_type,):
+        if membership_type == 1:
+            membership, access = Membership().bronze()
+            for data in self.member_informations:
+                if data == member:
+                    member = Person(name = member.name, age = member.age, phone = member.phone, height = member.height, weight = member.weight, BMI_value = member.BMI_value, BMI_range = member.BMI_range, membership = membership, access = access)
+                    print(member)
+            
         

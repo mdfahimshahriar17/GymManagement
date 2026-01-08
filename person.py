@@ -1,5 +1,5 @@
 class Person:
-    def __init__(self, name, age, phone, height, weight, BMI_value, BMI_range, membership=0):
+    def __init__(self, name, age, phone, height, weight, BMI_value, BMI_range, membership=None, access = None):
         self.name = name
         self.age = age
         self.phone = phone
@@ -8,10 +8,16 @@ class Person:
         self.BMI_value = BMI_value
         self.BMI_range = BMI_range
         self.membership = membership
+        self.access = access
 
     def __str__(self):
         bmi_text = f"{self.BMI_value:.2f} ({self.BMI_range})"
-        membership_text =  f"You have '{self.membership}' Month Membership"
+        membership_text =  f"You'r in our '{self.membership}' Membership you have GYM access for {self.access} months"
+
+        if not self.membership:
+            membership_text = "Currently you don't have any Membership plan"
+
+        
 
         return (
             f"Name : {self.name}\n"
@@ -33,6 +39,7 @@ class Person:
             "weight": self.weight,
             "BMI_value": self.BMI_value,
             "BMI_range": self.BMI_range,
-            "membership": self.membership
+            "membership": self.membership,
+            "access": self.access,
         }
  
